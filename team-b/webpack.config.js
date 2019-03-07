@@ -23,7 +23,8 @@ module.exports = {
     ]
   },
   devServer: {
-    port: 18081
+    port: 18081,
+    historyApiFallback: true
   },
   resolve: {
     extensions: ['*', '.js']
@@ -32,14 +33,14 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'app.min.js'
   },
-	plugins: [
-		new UglifyJSPlugin(),
+  plugins: [
+    new UglifyJSPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "./src/html/index.html"),
-			minify: {
-      	collapseWhitespace: true,
-				removeComments: true
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true
       }
     })
-	]
+  ]
 }
