@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 import HeadNavbar from '../components/HeadNavbar'
 import Content from '../components/Content'
+import LoginForm from '../components/LoginForm'
 
 const App = () => (
   <BrowserRouter>
     <div>
       <Route exact path='/' component={Home} />
-      <Route path='/about' component={About} />
+      <Route path='/login' component={Login} />
     </div>
   </BrowserRouter>
 )
@@ -19,24 +20,12 @@ const Home = () => (
     <Content />
   </div>
 )
-const About = () => {
-  return <div>About</div>
-}
-
-// class FApp extends React.Component {
-//   render() {
-//     return (
-//       <div className="shopping-list">
-//         <h1>Shopping List for {this.props.name}</h1>
-//         <ul>
-//           <li>Instagram</li>
-//           <li>WhatsApp</li>
-//           <li>Oculus</li>
-//         </ul>
-//       </div>
-//     );
-//   }
-// }
+const Login = () => (
+  <div>
+    <HeadNavbar />
+    <LoginForm />
+  </div>
+)
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
